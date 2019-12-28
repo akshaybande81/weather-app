@@ -6,6 +6,8 @@ const geocode = require("../utils/geocode.js");
 
 const app = express(); // initialize application
 
+const port = process.env.PORT || 3000; // heroku will provide the port with env variable
+
 console.log(__dirname);
 console.log(path.join(__dirname, '../public'));
 
@@ -70,7 +72,7 @@ app.get('/weather', (req, res) => {
                     }
                     else {
                         console.log(data, "data");
-                        return res.send( {
+                        return res.send({
                             title: "Weather",
                             text: data,
                             name: "Akshay Bande"
@@ -115,7 +117,7 @@ app.get("*", (req, res) => {
 })
 
 
-app.listen(3000, () => {
-    console.log("Web server is listening on port 3000");
+app.listen(port, () => {
+    console.log(`Web server is listening on port ${port}`);
 })
 

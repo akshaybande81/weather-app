@@ -8,7 +8,7 @@ searchForm.addEventListener("submit", (e) => {
     msgOne.textContent = "Loading...";
     e.preventDefault();
     if (search.value) {
-        let url = `http://localhost:3000/weather?address=${search.value}`;
+        let url = `/weather?address=${search.value}`;
         console.log(url, "url");
         fetch(url).then((response) => {
             return response.json().then((res) => {
