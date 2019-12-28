@@ -1,6 +1,3 @@
-console.log("Client side javascript loaded");
-
-
 
 let searchForm = document.querySelector("form");
 let search = document.querySelector("input");
